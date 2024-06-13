@@ -18,7 +18,7 @@ This project was originally built using Visual C++20 in Visual Studio 2022 and u
 In order to compile the code locally and run it using Visual Studio, you should follow the instructions below, ensuring that software versions match where possible to avoid any unwanted errors.
 
  - Install Visual Studio 2022
- - Download or Clone this repository to an appropriate directory on your local machine. You should end up with a folder called "CellularAutomataEngine"
+ - Download or Clone this repository to an appropriate directory on your local machine. You should end up with a folder called``CellularAutomataEngin''
    - Note: If you Download this project rather than Cloning it, you may find that after extracting the files from the .zip folder, there is a second folder called "CellularAutomataEngine" within the first one. It is this inner folder you want -- move the inner folder to your desired directory and delete the (now empty) outer folder.
  - [Download SFML](https://www.sfml-dev.org/download/sfml/2.6.1/). You will need the Visual C++17 (2022) 64-bit version of SFML.
  - Extract the SFML files from the .zip folder you just downloaded.
@@ -29,7 +29,7 @@ That's it, you're good to go! Now simply open the "SFML_Einstein_GoL.sln" file, 
 
 Note that the build options you will need to use are "x64" and "Debug" in order for the code to compile correctly. Also ensure that your C++ Language Standard (found under Project > Project Properties > Configuration Properties > General > General Properties) should be set to "ISO C++20 Standard (/std:c++20)".
 The linker and compiler, along with the above build options and standards, should be set up appropriately by default due to the .vcxproj file included in this repository, however if Visual Studio fails to read this file for any reason, you may have to alter these settings manually. 
-If you need to change the linker and compiler settings manually, I recommend following the "Setting up SFML" chapter of John Hortons book...
+If you need to change the linker and compiler settings manually, I recommend following the "Setting up SFML" chapter of John Hortons book [Beginning C++ Game Programming](https://subscription.packtpub.com/search?query=beginning%20c%2020%20game%20programming).
 
 To reiterate the note in the introduction, once this project reaches a release build, we aim to move to static SFML so that the end user does not have to download the files separately. This readme will be updated with new instructions once this changeover happens.
 
