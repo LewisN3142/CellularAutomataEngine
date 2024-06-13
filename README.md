@@ -22,8 +22,8 @@ In order to compile the code locally and run it using Visual Studio, you should 
    - Note: If you Download this project rather than Cloning it, you may find that after extracting the files from the ``.zip`` folder, there is a second folder called ``CellularAutomataEngine`` within the first one. It is this inner folder you want -- move the inner folder to your desired directory and delete the (now empty) outer folder.
  - [Download SFML](https://www.sfml-dev.org/download/sfml/2.6.1/). You will need the Visual C++17 (2022) 64-bit version of SFML 2.6.1.
  - Extract the SFML files from the ``.zip`` folder you just downloaded.
- - Inside the ``SFML-2.6.1-windows-vc17-64-bit`` folder you will find a folder named ``SFML-2.6.1.`` Move this ``SFML-2.6.1`` folder to the same directory as the "CellularAutomataEngine" folder you obtained earlier, but NOT inside the ``CellularAutomataEngine`` folder.
- - Rename "SFML-2.6.1" to "SFML_x64."
+ - Inside the ``SFML-2.6.1-windows-vc17-64-bit`` folder you will find a folder named ``SFML-2.6.1``. Move this ``SFML-2.6.1`` folder to the same directory as the ``CellularAutomataEngine`` folder you obtained earlier, but NOT inside the ``CellularAutomataEngine`` folder itself.
+ - Rename ``SFML-2.6.1`` to ``SFML_x64.``
 
 Your final file hierarchy should look like
 
