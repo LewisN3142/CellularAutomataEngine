@@ -35,7 +35,7 @@ Your final folder hierarchy should look like
 
 If so then that's it, you're good to go! Now simply open the ``SFML_Einstein_GoL.sln`` file, which can be found in the ``CellularAutomataEngine`` folder, in Visual Studio 2022 and have fun!
 
-The build options you will need to use are ``x64`` and ``Debug`` in order for the code to compile correctly. Also ensure that your C++ Language Standard (found under ``Project > Project Properties > Configuration Properties > General > General Properties`` in Visual Studio) should be set to ``ISO C++20 Standard (/std:c++20)``.
+The build options you will need to use are ``x64`` and ``Debug`` in order for the code to compile correctly. Also ensure that your C++ Language Standard (found under ``Project > Project Properties > Configuration Properties > General > General Properties`` in Visual Studio) is set to ``ISO C++20 Standard (/std:c++20)``.
 The linker and compiler, along with the above build options and standards, should be set up appropriately by default due to the .vcxproj file included in this repository, however if Visual Studio fails to read this file for any reason, you may have to alter these settings manually. 
 If you need to change the linker and compiler settings manually, I recommend following the ``Setting up SFML`` chapter of John Horton's book [Beginning C++ Game Programming](https://subscription.packtpub.com/search?query=beginning%20c%2020%20game%20programming).
 
