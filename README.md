@@ -7,7 +7,7 @@ It does so by interpreting Cellular Automata algorithms as algorithms acting on 
 Independently of this, an SFML-based visual component can be used to render the output of the algorithm to the screen.
 
 An executable version of The CA Engine can be found in the root folder of this repository, if you would like to run the code without compiling it yourself. Please ensure that you
- - Have a 64-bit compatible computer
+ - Have a 64-bit compatible computer.
  - Have downloaded the SFML ``.dll`` files from the root folder of this repository and placed them in the same folder as the ``.exe`` file
 before running the executable.
 
