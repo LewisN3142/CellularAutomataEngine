@@ -33,6 +33,8 @@ If you need to change the linker and compiler settings manually, I recommend fol
 
 To reiterate the note in the introduction, once this project reaches a release build, we aim to move to static SFML so that the end user does not have to download the files separately. This readme will be updated with new instructions once this changeover happens.
 
+Note that the .exe file at the root of the project folder does not update when you compile the code yourself. A new executable will be generated in x64 > Debug and you will need to copy the sfml .dll files into the same folder in order to run the executable.
+
 
 ## Functionality
 
