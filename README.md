@@ -37,7 +37,7 @@ If so then that's it, you're good to go! Now simply open the ``SFML_Einstein_GoL
 
 The build options you will need to use are "x64" and "Debug" in order for the code to compile correctly. Also ensure that your C++ Language Standard (found under Project > Project Properties > Configuration Properties > General > General Properties) should be set to ``ISO C++20 Standard (/std:c++20)``.
 The linker and compiler, along with the above build options and standards, should be set up appropriately by default due to the .vcxproj file included in this repository, however if Visual Studio fails to read this file for any reason, you may have to alter these settings manually. 
-If you need to change the linker and compiler settings manually, I recommend following the ``Setting up SFML`` chapter of John Hortons book [Beginning C++ Game Programming](https://subscription.packtpub.com/search?query=beginning%20c%2020%20game%20programming).
+If you need to change the linker and compiler settings manually, I recommend following the ``Setting up SFML`` chapter of John Horton's book [Beginning C++ Game Programming](https://subscription.packtpub.com/search?query=beginning%20c%2020%20game%20programming).
 
 To reiterate the note in the introduction, once this project reaches a release build, we aim to move to static SFML so that the end user does not have to download the files separately. This readme will be updated with new instructions once this changeover happens.
 
