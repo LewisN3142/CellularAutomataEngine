@@ -17,7 +17,7 @@ before running the executable.
 This project was originally built using Visual C++20 in Visual Studio 2022 and uses the Visual C++17 64-bit version of SFML 2.6.1. Please ensure you have a 64-bit compatible system before attempting to compile and run this application.
 In order to compile the code locally and run it using Visual Studio, you should follow the instructions below, ensuring that software versions match where possible to avoid any unwanted errors.
 
- - Install Visual Studio 2022
+ - [Download](https://visualstudio.microsoft.com/vs/) and Install Visual Studio 2022
  - Clone or Download and Extract this repository to an appropriate directory on your local machine. You should end up with a folder called ``CellularAutomataEngine``
    - Note: If you Download this project rather than Cloning it, you may find that after extracting the files from the .zip folder, there is a second folder called ``CellularAutomataEngine`` within the first one. It is this inner folder you want -- move the inner folder to your desired directory and delete the (now empty) outer folder.
  - [Download SFML](https://www.sfml-dev.org/download/sfml/2.6.1/). You will need the Visual C++17 (2022) 64-bit version of SFML.
