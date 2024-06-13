@@ -25,7 +25,7 @@ In order to compile the code locally and run it using Visual Studio, you should 
  - Inside the ``SFML-2.6.1-windows-vc17-64-bit`` folder you will find a folder named ``SFML-2.6.1``. Move this ``SFML-2.6.1`` folder to the same directory as the ``CellularAutomataEngine`` folder you obtained earlier, but NOT inside the ``CellularAutomataEngine`` folder itself.
  - Rename ``SFML-2.6.1`` to ``SFML_x64.``
 
-Your final file hierarchy should look like
+Your final folder hierarchy should look like
 
  - CHOSEN_DIRECTORY
    - ``CellularAutomataEngine``
