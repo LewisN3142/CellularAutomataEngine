@@ -25,7 +25,15 @@ In order to compile the code locally and run it using Visual Studio, you should 
  - Inside the ``SFML-2.6.1-windows-vc17-64-bit`` folder you will find a folder named ``SFML-2.6.1.`` Move this ``SFML-2.6.1`` folder to the same directory as the "CellularAutomataEngine" folder you obtained earlier, but NOT inside the ``CellularAutomataEngine`` folder.
  - Rename "SFML-2.6.1" to "SFML_x64."
 
-That's it, you're good to go! Now simply open the ``SFML_Einstein_GoL.sln`` file, which can be found in the ``CellularAutomataEngine`` folder, in Visual Studio 2022 and have fun!
+Your final file hierarchy should look like
+
+ - CHOSEN_DIRECTORY
+   - ``CellularAutomataEngine``
+     - PROJECT_FILES
+   - ``SFML_x64``
+     - FILES FROM ``SFML-2.6.1``
+
+If so then that's it, you're good to go! Now simply open the ``SFML_Einstein_GoL.sln`` file, which can be found in the ``CellularAutomataEngine`` folder, in Visual Studio 2022 and have fun!
 
 Note that the build options you will need to use are "x64" and "Debug" in order for the code to compile correctly. Also ensure that your C++ Language Standard (found under Project > Project Properties > Configuration Properties > General > General Properties) should be set to ``ISO C++20 Standard (/std:c++20)``.
 The linker and compiler, along with the above build options and standards, should be set up appropriately by default due to the .vcxproj file included in this repository, however if Visual Studio fails to read this file for any reason, you may have to alter these settings manually. 
