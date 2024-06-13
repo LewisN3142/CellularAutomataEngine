@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Engine">
+      <UniqueIdentifier>{d85ed8fa-02f3-41f5-967c-38aaad104667}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine">
+      <UniqueIdentifier>{2d2391d5-b83b-4996-a5dc-2026d8cf5211}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Automata">
+      <UniqueIdentifier>{55752de6-7682-477b-942c-7b57fa589ea1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Automata">
+      <UniqueIdentifier>{87a34ee6-499e-4cfe-8daf-3dd592bb29cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tilings">
+      <UniqueIdentifier>{76d52b9e-3baa-473f-b681-6f4fc7be0060}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Tilings">
+      <UniqueIdentifier>{cfb13f01-0d42-4896-9b31-9226895f605d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Other">
+      <UniqueIdentifier>{2373ce9d-4abe-4985-bba5-1ace9b91da28}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SFML_Einstein_GoL.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulationEngine.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="MatrixAutomata.h">
+      <Filter>Header Files\Automata</Filter>
+    </ClCompile>
+    <ClCompile Include="MatrixGoL.cpp">
+      <Filter>Source Files\Automata</Filter>
+    </ClCompile>
+    <ClCompile Include="SquareTiling.cpp">
+      <Filter>Source Files\Tilings</Filter>
+    </ClCompile>
+    <ClCompile Include="SquareTiling.h">
+      <Filter>Header Files\Tilings</Filter>
+    </ClCompile>
+    <ClCompile Include="SquareTileCell.cpp">
+      <Filter>Source Files\Tilings</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SimulationEngine.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="SquareTileCell.h">
+      <Filter>Header Files\Tilings</Filter>
+    </ClInclude>
+    <ClInclude Include="variables.h">
+      <Filter>Header Files\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="GenericTiling.h">
+      <Filter>Header Files\Tilings</Filter>
+    </ClInclude>
+    <ClInclude Include="GenericTileCell.h">
+      <Filter>Header Files\Tilings</Filter>
+    </ClInclude>
+    <ClInclude Include="RegularTiling.h">
+      <Filter>Header Files\Tilings</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

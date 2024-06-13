@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SFML_Einstein_GoL", "SFML_Einstein_GoL.vcxproj", "{461B8F0A-E178-4469-862D-889EA89D0FD6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{461B8F0A-E178-4469-862D-889EA89D0FD6}.Debug|x64.ActiveCfg = Debug|x64
+		{461B8F0A-E178-4469-862D-889EA89D0FD6}.Debug|x64.Build.0 = Debug|x64
+		{461B8F0A-E178-4469-862D-889EA89D0FD6}.Debug|x86.ActiveCfg = Debug|Win32
+		{461B8F0A-E178-4469-862D-889EA89D0FD6}.Debug|x86.Build.0 = Debug|Win32
+		{461B8F0A-E178-4469-862D-889EA89D0FD6}.Release|x64.ActiveCfg = Release|x64
+		{461B8F0A-E178-4469-862D-889EA89D0FD6}.Release|x64.Build.0 = Release|x64
+		{461B8F0A-E178-4469-862D-889EA89D0FD6}.Release|x86.ActiveCfg = Release|Win32
+		{461B8F0A-E178-4469-862D-889EA89D0FD6}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EFD9EAF8-8AB8-47B7-AD12-B39BC6910436}
+	EndGlobalSection
+EndGlobal
