@@ -3,7 +3,7 @@
 ## Description
 
 The Cellular Automata (CA) Engine is a program for simulating cellular automata such as Conway's Game of Life or Langton's Turmites on a range of regular and irregular tilings of the plane, as well as arbitrary graphs. 
-It does so by interpreting Cellular Automata algorithms as algorithms acting on sparse matrices, namely the adjacency matrices for the cells, given in a modified Compressed Sparse Row representation (more information on this below -- link TBC) and computing a vector containing the resulting states of each cell at each iteration.
+It does so by interpreting Cellular Automata algorithms as algorithms acting on sparse matrices, namely the adjacency matrices for the cells, given in a modified Compressed Sparse Row representation (more information on this below -- link TBC) and computing a vector containing the state of each cell at each iteration.
 Independently of this, an SFML-based visual component can be used to render the output of the algorithm to the screen.
 
 An executable version of The CA Engine can be found in the root folder of this repository, if you would like to run the code without compiling it yourself. Please ensure that you
