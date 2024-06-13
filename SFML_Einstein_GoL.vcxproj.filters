@@ -31,50 +31,47 @@
     <Filter Include="Header Files\Tilings">
       <UniqueIdentifier>{cfb13f01-0d42-4896-9b31-9226895f605d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Other">
-      <UniqueIdentifier>{2373ce9d-4abe-4985-bba5-1ace9b91da28}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SFML_Einstein_GoL.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="SimulationEngine.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="MatrixAutomata.h">
-      <Filter>Header Files\Automata</Filter>
-    </ClCompile>
-    <ClCompile Include="MatrixGoL.cpp">
+    <ClCompile Include="Source\Automata\MatrixGoL.cpp">
       <Filter>Source Files\Automata</Filter>
     </ClCompile>
-    <ClCompile Include="SquareTiling.cpp">
+    <ClCompile Include="Source\Engine\SFML_Einstein_GoL.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\SimulationEngine.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Tilings\SquareTileCell.cpp">
       <Filter>Source Files\Tilings</Filter>
     </ClCompile>
-    <ClCompile Include="SquareTiling.h">
-      <Filter>Header Files\Tilings</Filter>
-    </ClCompile>
-    <ClCompile Include="SquareTileCell.cpp">
+    <ClCompile Include="Source\Tilings\SquareTiling.cpp">
       <Filter>Source Files\Tilings</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SimulationEngine.h">
+    <ClInclude Include="Source\Automata\MatrixAutomata.h">
+      <Filter>Header Files\Automata</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\SimulationEngine.h">
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="SquareTileCell.h">
+    <ClInclude Include="Source\Engine\variables.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Tilings\GenericTileCell.h">
       <Filter>Header Files\Tilings</Filter>
     </ClInclude>
-    <ClInclude Include="variables.h">
-      <Filter>Header Files\Other</Filter>
-    </ClInclude>
-    <ClInclude Include="GenericTiling.h">
+    <ClInclude Include="Source\Tilings\GenericTiling.h">
       <Filter>Header Files\Tilings</Filter>
     </ClInclude>
-    <ClInclude Include="GenericTileCell.h">
+    <ClInclude Include="Source\Tilings\RegularTiling.h">
       <Filter>Header Files\Tilings</Filter>
     </ClInclude>
-    <ClInclude Include="RegularTiling.h">
+    <ClInclude Include="Source\Tilings\SquareTileCell.h">
+      <Filter>Header Files\Tilings</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Tilings\SquareTiling.h">
       <Filter>Header Files\Tilings</Filter>
     </ClInclude>
   </ItemGroup>

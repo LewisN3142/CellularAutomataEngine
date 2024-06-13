@@ -143,21 +143,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="MatrixGoL.cpp" />
-    <ClCompile Include="MatrixAutomata.h" />
-    <ClCompile Include="SFML_Einstein_GoL.cpp" />
-    <ClCompile Include="SimulationEngine.cpp" />
-    <ClCompile Include="SquareTileCell.cpp" />
-    <ClCompile Include="SquareTiling.cpp" />
-    <ClCompile Include="SquareTiling.h" />
+    <ClCompile Include="Source\Automata\MatrixGoL.cpp" />
+    <ClCompile Include="Source\Engine\SFML_Einstein_GoL.cpp" />
+    <ClCompile Include="Source\Engine\SimulationEngine.cpp" />
+    <ClCompile Include="Source\Tilings\SquareTileCell.cpp" />
+    <ClCompile Include="Source\Tilings\SquareTiling.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GenericTiling.h" />
-    <ClInclude Include="RegularTiling.h" />
-    <ClInclude Include="SimulationEngine.h" />
-    <ClInclude Include="SquareTileCell.h" />
-    <ClInclude Include="GenericTileCell.h" />
-    <ClInclude Include="variables.h" />
+    <ClInclude Include="Source\Automata\MatrixAutomata.h" />
+    <ClInclude Include="Source\Engine\SimulationEngine.h" />
+    <ClInclude Include="Source\Engine\variables.h" />
+    <ClInclude Include="Source\Tilings\GenericTileCell.h" />
+    <ClInclude Include="Source\Tilings\GenericTiling.h" />
+    <ClInclude Include="Source\Tilings\RegularTiling.h" />
+    <ClInclude Include="Source\Tilings\SquareTileCell.h" />
+    <ClInclude Include="Source\Tilings\SquareTiling.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

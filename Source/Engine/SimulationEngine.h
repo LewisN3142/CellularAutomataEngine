@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "SquareTileCell.h"
-#include "SquareTiling.h"
+#include "../Tilings/SquareTileCell.h"
+#include "../Tilings/SquareTiling.h"
 
 using namespace sf;
 

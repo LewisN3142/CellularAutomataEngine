@@ -1,7 +1,7 @@
 #include "SimulationEngine.h"
-#include "MatrixAutomata.h"
-#include "SquareTiling.h"
-#include "SquareTileCell.h"
+#include "../Automata/MatrixAutomata.h"
+#include "../Tilings/SquareTiling.h"
+#include "../Tilings/SquareTileCell.h"
 #include "variables.h"
 
 

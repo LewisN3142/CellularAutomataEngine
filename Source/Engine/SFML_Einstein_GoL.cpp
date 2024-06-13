@@ -1,8 +1,6 @@
 #include "SimulationEngine.h"
 #include <iostream>
 
-#include "SquareTiling.h"
-
 int main()
 {
 	SimulationEngine m_SimulationEngine; // Could in theory create and run multiple on different threads to parallelize 

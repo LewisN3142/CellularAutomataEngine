@@ -1,45 +1,42 @@
 #pragma once
-#include <SFML/Graphics.hpp>
-#include "SquareTileCell.h"
-#include "variables.h"
 
-class SquareTiling
+#include <SFML/Graphics.hpp>
+#include "../Engine/variables.h"
+#include "GenericTileCell.h"
+
+class GenericTiling
 {
 private:
 	// Tiling options
-	int m_numRowsInTiling;
-	int m_numColumnsInTiling;
+	bool isTilingRegular; // Make two subclasses for regular and irregular then subclass further from there
 	int m_numCells;
-
-	int m_numTotalNeighbours;
-	std::vector<int> m_numCellNeighbours;
-
-	// Neighbourhood options
-	bool m_isMoore;
-	e_Surface m_surfaceType;
+	int m_numTotalNeighbours; // Total number of links in graph corresponding to tiling
+	std::vector<int> m_numCellNeighbours; // List of how many neighbours each cell has
 
 	// Adjacency matrix in compressed sparse row representation (also need tile states)
 	std::vector<int> m_firstNeighbourListIndex; // lists the index in m_listCellNeighbours of each cell's first neighbour -- equivalent to row start vector in CSR
 	std::vector<int> m_listCellNeighbours; // lists each cell's neighbours in turn -- equivalent to column index vector in CSR 
 
 	// Store the visual tiling 
-	std::vector<SquareTileCell> m_visualCells;
+	std::vector<GenericTileCell> m_visualCells;
 
 
 public:
-	SquareTiling(int numRows, int numColumns, e_Surface surfaceType, bool isMoore);
+	GenericTiling(); // Custom constructor with input variables...
 
 	std::vector<int> getFirstNeighbourListIndex();
 	std::vector<int> getListCellNeighbours();
 	std::vector<int> getNumCellNeighbours();
 	int getNumCells();
-	std::vector<SquareTileCell> getVisualTiling();
+	std::vector<GenericTileCell> getVisualTiling();
 
 	void generateAdjacencyMatrix();
-	void generateVisualTiling(int blockSize);
+	void generateVisualTiling(int size);
 
 	void setNumCellNeighbours();
 	void setFirstNeighbourListIndex();
 	void setListCellNeighbours();
-	void resetNeighbourhoodOptions(e_Surface newSurfaceType, bool isNowMoore);
 };
+
+
+// number of rows, columns, neighbourhood type, BCs only make sense for regular

@@ -1,6 +1,6 @@
 #include "SquareTiling.h"
 #include "SquareTileCell.h"
-#include "variables.h"
+#include "../Engine/variables.h"
 
 #include <SFML/Graphics.hpp>
 #include <iostream>

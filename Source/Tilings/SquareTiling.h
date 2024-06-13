@@ -1,42 +1,45 @@
 #pragma once
-
 #include <SFML/Graphics.hpp>
-#include "variables.h"
-#include "GenericTileCell.h"
+#include "SquareTileCell.h"
+#include "../Engine/variables.h"
 
-class GenericTiling
+class SquareTiling
 {
 private:
 	// Tiling options
-	bool isTilingRegular; // Make two subclasses for regular and irregular then subclass further from there
+	int m_numRowsInTiling;
+	int m_numColumnsInTiling;
 	int m_numCells;
-	int m_numTotalNeighbours; // Total number of links in graph corresponding to tiling
-	std::vector<int> m_numCellNeighbours; // List of how many neighbours each cell has
+
+	int m_numTotalNeighbours;
+	std::vector<int> m_numCellNeighbours;
+
+	// Neighbourhood options
+	bool m_isMoore;
+	e_Surface m_surfaceType;
 
 	// Adjacency matrix in compressed sparse row representation (also need tile states)
 	std::vector<int> m_firstNeighbourListIndex; // lists the index in m_listCellNeighbours of each cell's first neighbour -- equivalent to row start vector in CSR
 	std::vector<int> m_listCellNeighbours; // lists each cell's neighbours in turn -- equivalent to column index vector in CSR 
 
 	// Store the visual tiling 
-	std::vector<GenericTileCell> m_visualCells;
+	std::vector<SquareTileCell> m_visualCells;
 
 
 public:
-	GenericTiling(); // Custom constructor with input variables...
+	SquareTiling(int numRows, int numColumns, e_Surface surfaceType, bool isMoore);
 
 	std::vector<int> getFirstNeighbourListIndex();
 	std::vector<int> getListCellNeighbours();
 	std::vector<int> getNumCellNeighbours();
 	int getNumCells();
-	std::vector<GenericTileCell> getVisualTiling();
+	std::vector<SquareTileCell> getVisualTiling();
 
 	void generateAdjacencyMatrix();
-	void generateVisualTiling(int size);
+	void generateVisualTiling(int blockSize);
 
 	void setNumCellNeighbours();
 	void setFirstNeighbourListIndex();
 	void setListCellNeighbours();
+	void resetNeighbourhoodOptions(e_Surface newSurfaceType, bool isNowMoore);
 };
-
-
-// number of rows, columns, neighbourhood type, BCs only make sense for regular
