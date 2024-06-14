@@ -1,6 +1,6 @@
 # A Cellular Automata Engine
 
-<video src="https://github.com/LewisN3142/CellularAutomataEngine/blob/main/Clips/Demo.mp4" width="300" />
+[![Conway's Game of Life on the Plane](https://img.youtube.com/vi/9tncKbkjvZs/0.jpg)](https://www.youtube.com/watch?v=9tncKbkjvZs)
 
 ## Description
 
