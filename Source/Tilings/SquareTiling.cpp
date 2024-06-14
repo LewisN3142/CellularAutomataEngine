@@ -312,5 +312,5 @@ std::vector<SquareTileCell> SquareTiling::getVisualTiling()
 
 // if do langton's ants or similar, each tile needs to know who are its neighbours 
 // tiles are own class that tiling generator constructs, each tile knows its neighbours' indices and its shape (given unique index number when created)
-// resetter for grid size also needs to reset board states from SimulationEngine so do that there
+// resetter for grid size also needs to reset tiling states from SimulationEngine so do that there
 

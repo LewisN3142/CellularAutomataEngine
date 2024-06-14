@@ -30,10 +30,10 @@ void SimulationEngine::run()
 	{
 		handleInput();
 
-		// Eventually enclose below into boardstate manager and updater
+		// Eventually enclose below into tiling state manager and updater
 		if (m_isSimulationRunning) 
 		{
-			m_boardStates = MatrixGoL(m_boardStates, newTiling.getFirstNeighbourListIndex(), newTiling.getListCellNeighbours(), newTiling.getNumCellNeighbours());
+			m_tilingStates = MatrixGoL(m_tilingStates, newTiling.getFirstNeighbourListIndex(), newTiling.getListCellNeighbours(), newTiling.getNumCellNeighbours());
 			m_stepCounter += 1;
 			std::cout << m_stepCounter << std::endl;
 		}
@@ -57,9 +57,9 @@ void SimulationEngine::renderTiling(SquareTiling tiling) // Change function name
 
 void SimulationEngine::drawVisualCells(std::vector<SquareTileCell> visualCells) 
 {
-	for (int i = 0; i < m_boardStates.size(); i++)
+	for (int i = 0; i < m_tilingStates.size(); i++)
 	{
-		if (m_boardStates[i] == -1)
+		if (m_tilingStates[i] == -1)
 		{
 			visualCells[i].changeColour(sf::Color::Blue);
 		}
@@ -71,14 +71,13 @@ SquareTiling SimulationEngine::generateSquareTiling(int rows, int columns, e_Sur
 {
 	SquareTiling newTiling = SquareTiling(rows, columns, surfaceType, isMoore);
 	newTiling.generateVisualTiling(blockSize);
-	m_boardStates = std::vector<int>(newTiling.getNumCells(), 1);
+	m_tilingStates = std::vector<int>(newTiling.getNumCells(), 1);
 	m_proportionDeadAlive = proportionDeadAlive;
 	return newTiling;
 }
 
 void SimulationEngine::handleInput()
 {
-	// to edit -- add temporary reroll function to re-randomise board without re-launching script
 	Event event;
 	while (m_Window.pollEvent(event))
 	{
@@ -109,11 +108,11 @@ void SimulationEngine::handleInput()
 				case 1:
 					break;
 				case 0:
-					m_boardStates = randomBoardState(m_boardStates, m_proportionDeadAlive);
+					m_tilingStates = randomTilingState(m_tilingStates, m_proportionDeadAlive);
 					break;
 				}
 
-			// case Keyboard::S: // Eventual pause and save simulation -- get start state (board, tiling, input variables), number of iterations, maybe end state
+			// case Keyboard::S: // Eventual pause and save simulation -- get start state (tiling type and state, input variables), number of iterations, maybe end state
 			}
 			break;
 		}
@@ -125,10 +124,10 @@ void SimulationEngine::handleInput()
 	}
 }
 
-std::vector<int> SimulationEngine::randomBoardState(std::vector<int> boardStates, std::pair<int, int> proportionDeadAlive) 
+std::vector<int> SimulationEngine::randomTilingState(std::vector<int> tilingStates, std::pair<int, int> proportionDeadAlive) 
 {
 	srand((int)time(0));
-	for (int i = 0; i < boardStates.size(); i++)
+	for (int i = 0; i < tilingStates.size(); i++)
 	{
 		int number = (int)(rand() % (proportionDeadAlive.first + proportionDeadAlive.second)); // There is a first:second ratio of Dead:Alive
 		bool isGoingToLive = (number < proportionDeadAlive.second);
@@ -136,16 +135,16 @@ std::vector<int> SimulationEngine::randomBoardState(std::vector<int> boardStates
 		switch (isGoingToLive)
 		{
 		case 1:
-			boardStates[i] = -1;
+			tilingStates[i] = -1;
 			break;
 		case 0:
-			boardStates[i] = 1;
+			tilingStates[i] = 1;
 			break;
 		}
 	}
 
 	m_stepCounter = 0;
-	return boardStates;
+	return tilingStates;
 }
 
 
@@ -153,5 +152,5 @@ std::vector<int> SimulationEngine::randomBoardState(std::vector<int> boardStates
 
 // Two separate viewports, one for controls, other for simulation
 // Implement pass as reference where possible
-// Not sure if random board state/board state updater will end up somewhere else... want to make tiles clickable so that will probably need board state manager
+// Not sure if tiling state updater and randomiser will end up somewhere else... want to make tiles clickable so that will probably need tiling state manager
 // Do we make tiling a member variable ??

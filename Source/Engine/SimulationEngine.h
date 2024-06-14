@@ -11,7 +11,7 @@ private:
 	Vector2f m_Resolution;
 	int m_stepCounter = 0;
 
-	std::vector<int> m_boardStates;
+	std::vector<int> m_tilingStates;
 	std::pair<int,int> m_proportionDeadAlive; // Set a default value...
 	bool m_isSimulationRunning = false;
 
@@ -25,5 +25,5 @@ public:
 	SimulationEngine();
 	void run();
 
-	std::vector<int> randomBoardState(std::vector<int> boardStates, std::pair<int,int> proportionDeadAlive); // Maybe move into board state manager, or use member variable proportionDeadAlive
+	std::vector<int> randomTilingState(std::vector<int> boardStates, std::pair<int,int> proportionDeadAlive); // Maybe move into board state manager, or use member variable proportionDeadAlive
 };
