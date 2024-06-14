@@ -1,6 +1,6 @@
 # A Cellular Automata Engine
 
-<video src="https://github.com/LewisN3142/CellularAutomataEngine/blob/main/Clips/Demo.mp4" width="300">
+<video src="https://github.com/LewisN3142/CellularAutomataEngine/blob/main/Clips/Demo.mp4" width="300" />
 
 ## Description
 
