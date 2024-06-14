@@ -17,7 +17,7 @@ void SimulationEngine::run()
 {
 	// Temporary variables for default inputs
 	int rows = 50;
-	int columns = 50;
+	int columns = 80;
 	int blockSize = 14;
 	e_Surface surfaceType = PLANE;
 	bool isMoore = 1;
@@ -46,10 +46,10 @@ void SimulationEngine::renderTiling(SquareTiling tiling) // Change function name
 	m_Window.clear(sf::Color::Black);
 
 	// Line between simulation and control panel (update to two viewports)
-	RectangleShape menu_Line(sf::Vector2f(0.005f * m_Resolution.x, m_Resolution.y));
-	menu_Line.setPosition(Vector2f(0.8f * m_Resolution.x, 0));
-	menu_Line.setFillColor(Color(128, 128, 128));
-	m_Window.draw(menu_Line);
+	// RectangleShape menu_Line(sf::Vector2f(0.005f * m_Resolution.x, m_Resolution.y));
+	// menu_Line.setPosition(Vector2f(0.8f * m_Resolution.x, 0));
+	// menu_Line.setFillColor(Color(128, 128, 128));
+	// m_Window.draw(menu_Line);
 
 	drawVisualCells(tiling.getVisualTiling());
 	m_Window.display();
