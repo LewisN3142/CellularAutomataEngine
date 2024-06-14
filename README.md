@@ -57,5 +57,9 @@ TBC
 ## Implementing Your Own Tilings
 TBC
 
+## License
+
+The material contained within this repository (including but not limited to code, program files, and their documentation) is distributed under a CC-BY-NC-SA license. Should you wish to license this material under any other terms, or claim copyright to any material presented herein, please [Contact Us](https://lewisn3142.github.io/contact_page/contact.html)
+
 ## References
 TBC
