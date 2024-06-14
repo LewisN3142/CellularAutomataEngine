@@ -1,5 +1,7 @@
 # A Cellular Automata Engine
 
+<video src="https://github.com/LewisN3142/CellularAutomataEngine/blob/main/Clips/Demo.mp4" width="300" />
+
 ## Description
 
 The Cellular Automata (CA) Engine is a program for simulating cellular automata such as Conway's Game of Life or Langton's Turmites on a range of regular and irregular tilings of the plane, as well as arbitrary graphs. 
