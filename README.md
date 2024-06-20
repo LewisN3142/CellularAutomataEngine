@@ -2,9 +2,15 @@
 
 [![Conway's Game of Life on the Plane](https://github.com/LewisN3142/CellularAutomataEngine/blob/main/GoL_Thumbnail.png)](https://www.youtube.com/watch?v=9tncKbkjvZs)
 
-Click the image to view a demostration of The Cellular Automata Engine simulating Conway's Game of Life on a 50x80 grid of square tiles with fixed (Dirichlet) boundary conditions (opens Youtube in the current window). The board starts with no living cells and is randomised three times, generating a tiling where roughly 37% of the tiles are alive. This proportion is configurable in engine. This demonstration is running in real time and is being captured simultaneously via OBS Studio.
+Click the image to watch a video of the engine in action (Opens Youtube in the current window)!
 
-## Description
+The video shows The Cellular Automata Engine simulating Conway's Game of Life on a 50x80 grid of square tiles with fixed (Dirichlet) boundary conditions. The board starts with no living cells and is randomised three times, generating a tiling where roughly 37% of the tiles are alive. Board and initial population sizes are both configurable in engine. This demonstration is running in real time and is being captured simultaneously via OBS Studio.
+
+## About Me
+
+Hi, I'm Lewis Napper, a mathematics Ph.D. student from The University of Surrey in the UK [(Click here for my Faculty Webpage)](https://www.surrey.ac.uk/people/lewis-napper). My research interests include geometry, relativity, and fluid dynamics, however more recently I have taken an interest in the behaviour of cellular automata on irregular tilings of the plane and on graphs. I have a moderate amount of experience in programming languages such as MATLAB, C++, and Python [(Click here for my Github Profile)](https://github.com/LewisN3142) from personal projects such as this one, as well as through providing teaching support to undergraduate courses in numerical methods. For more information, please visit my [Personal Website](https://lewisn3142.github.io/).    
+
+## About the Project
 
 The Cellular Automata (CA) Engine is a program for simulating cellular automata such as Conway's Game of Life or Langton's Turmites on a range of regular and irregular tilings of the plane, as well as arbitrary graphs. 
 It does so by interpreting Cellular Automata algorithms as algorithms acting on sparse matrices, namely the adjacency matrices for the cells, given in a modified Compressed Sparse Row representation (more information on this below -- link TBC) and computing a vector containing the state of each cell at each iteration.
@@ -64,6 +70,10 @@ TBC
 ## License
 
 The material contained within this repository (including but not limited to code, program files, and their documentation) is distributed under a CC-BY-NC-SA license. Should you wish to license this material under any other terms, or claim copyright to any material presented herein, please [Contact Us](https://lewisn3142.github.io/contact_page/contact.html)
+
+## Acknowledgements
+
+This project was undertaken under the kind supervision of [Dr. Jamie Gabbay](https://gabbay.org.uk/) of Heriot-Watt University. I am very thankful for him being so amenable to the idea of collaboration when I initially reached out, as well as for his help and advice thereafter.
 
 ## References
 TBC
