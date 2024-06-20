@@ -2,7 +2,7 @@
 
 [![Conway's Game of Life on the Plane](https://github.com/LewisN3142/CellularAutomataEngine/blob/main/GoL_Thumbnail.png)](https://www.youtube.com/watch?v=9tncKbkjvZs)
 
-Click the image to watch a video of the engine in action (Opens Youtube in the current window)!
+Click the image to watch a video of The Cellular Automata Engine in action! (Opens Youtube in the current window)
 
 The video shows The Cellular Automata Engine simulating Conway's Game of Life on a 50x80 grid of square tiles with fixed (Dirichlet) boundary conditions. The board starts with no living cells and is randomised three times, generating a tiling where roughly 37% of the tiles are alive. Board and initial population sizes are both configurable in engine. This demonstration is running in real time and is being captured simultaneously via OBS Studio.
 
