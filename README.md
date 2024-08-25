@@ -1,4 +1,5 @@
-# The Cellular Automata Engine
+# The Cellular Automata Engine:
+## Towards Game of Life on Einstein Tilings
 
 [![Conway's Game of Life on the Plane](https://github.com/LewisN3142/CellularAutomataEngine/blob/main/GoL_Thumbnail.png)](https://www.youtube.com/watch?v=9tncKbkjvZs)
 
@@ -12,9 +13,9 @@ Hi, I'm Lewis Napper, a mathematics Ph.D. student from The University of Surrey 
 
 ## About the Project
 
-The Cellular Automata (CA) Engine is a program for simulating cellular automata such as Conway's Game of Life or Langton's Turmites on a range of regular and irregular tilings of the plane, as well as arbitrary graphs. It does so by interpreting Cellular Automata as alorithms on sparse matrices, namely the weighted adjacency matrices of the tilings/graphs, given in a modified Compressed Sparse Row representation where we exploit additional patterns in the adjacency matrices. The output of these algorithms is then a vector containing the state of each cell at each iteration. More information on this can be found below (Link TBA). Independently of this, the SFML-based visual component can then be used to render the output of the algorithm to the screen.
+The Cellular Automata (CA) Engine is a program for simulating cellular automata such as Conway's Game of Life or Langton's Turmites on a range of regular and irregular tilings of the plane, as well as arbitrary graphs. It does so by interpreting Cellular Automata as algorithms on sparse matrices, namely the weighted adjacency matrices of the tilings/graphs, given in a modified Compressed Sparse Row representation where we exploit additional patterns in the adjacency matrices. The output of these algorithms is then a vector containing the state of each cell at each iteration. More information on this can be found below (Link TBA). Independently of this, the SFML-based visual component can then be used to render the output of the algorithm to the screen.
 
-This project was born of the desire to simulate Conway's Game of Life on tilings of the plane by aperiodic monotiles, such as the Penrose and Einstein tiles. However, since many of the features and methods were initially tested on regular tilings of the plane for verification purposes, the CA Engine has been designed with flexibility in mind, with the ability to swap between range of regular and irregular tilings, as well as different cellular automata settings. Since the algorithms, tilings, and rendering components are decoupled, it is straightforward for users familiar with C++ to contribute new tilings to our expanding library and implement their own algorithms on the existing options.
+This project was born of the desire to simulate Conway's Game of Life on tilings of the plane by aperiodic monotiles, such as the Einstein tiling. However, since many of the features and methods were initially tested on regular tilings of the plane for verification purposes, the CA Engine has been designed with flexibility in mind, with the ability to swap between range of regular and irregular tilings, as well as different cellular automata settings. Since the algorithms, tilings, and rendering components are decoupled, it is straightforward for users familiar with C++ to contribute new tilings to our expanding library and implement their own algorithms on the existing options.
 
 An executable version of The CA Engine can be found in the root folder of this repository, if you would like to run the code without compiling it yourself. Please ensure that you
  - Have a 64-bit compatible computer.
