@@ -1,12 +1,21 @@
-# A Cellular Automata Engine
+# The Cellular Automata Engine:
+## Towards Game of Life on Einstein Tilings
 
-<video src="https://github.com/LewisN3142/CellularAutomataEngine/blob/main/Clips/Demo.mp4" width="300" />
+[![Conway's Game of Life on the Plane](https://github.com/LewisN3142/CellularAutomataEngine/blob/main/GoL_Thumbnail.png)](https://www.youtube.com/watch?v=9tncKbkjvZs)
 
-## Description
+Click the image to watch a video of The Cellular Automata Engine in action! (Opens Youtube in the current window)
 
-The Cellular Automata (CA) Engine is a program for simulating cellular automata such as Conway's Game of Life or Langton's Turmites on a range of regular and irregular tilings of the plane, as well as arbitrary graphs. 
-It does so by interpreting Cellular Automata algorithms as algorithms acting on sparse matrices, namely the adjacency matrices for the cells, given in a modified Compressed Sparse Row representation (more information on this below -- link TBC) and computing a vector containing the state of each cell at each iteration.
-Independently of this, an SFML-based visual component can be used to render the output of the algorithm to the screen.
+The video shows The Cellular Automata Engine simulating Conway's Game of Life on a 50x80 grid of square tiles with fixed (Dirichlet) boundary conditions. The board starts with no living cells and is randomised three times, generating a tiling where roughly 37% of the tiles are alive. Board and initial population sizes are both configurable in engine. This demonstration is running in real time and is being captured simultaneously via OBS Studio.
+
+## About Me
+
+Hi, I'm Lewis Napper, a mathematics Ph.D. student from The University of Surrey in the UK [(See my Faculty Webpage)](https://www.surrey.ac.uk/people/lewis-napper). My research interests include geometry, relativity, and fluid dynamics, however more recently I have taken an interest in the behaviour of cellular automata on irregular tilings of the plane and on graphs. I have a moderate amount of experience in programming languages such as MATLAB, C++, and Python [(See my Github Profile)](https://github.com/LewisN3142) from personal projects such as this one, as well as through providing teaching support to undergraduate courses in numerical methods. For more information, please visit my [Personal Website](https://lewisn3142.github.io/).    
+
+## About the Project
+
+The Cellular Automata (CA) Engine is a program for simulating cellular automata such as Conway's Game of Life or Langton's Turmites on a range of regular and irregular tilings of the plane, as well as arbitrary graphs. It does so by interpreting Cellular Automata as algorithms on sparse matrices, namely the weighted adjacency matrices of the tilings/graphs, given in a modified Compressed Sparse Row representation where we exploit additional patterns in the adjacency matrices. The output of these algorithms is then a vector containing the state of each cell at each iteration. More information on this can be found below (Link TBA). Independently of this, the SFML-based visual component can then be used to render the output of the algorithm to the screen.
+
+This project was born of the desire to simulate Conway's Game of Life on tilings of the plane by aperiodic monotiles, such as the Einstein tiling. However, since many of the features and methods were initially tested on regular tilings of the plane for verification purposes, the CA Engine has been designed with flexibility in mind, with the ability to swap between range of regular and irregular tilings, as well as different cellular automata settings. Since the algorithms, tilings, and rendering components are decoupled, it is straightforward for users familiar with C++ to contribute new tilings to our expanding library and implement their own algorithms on the existing options.
 
 An executable version of The CA Engine can be found in the root folder of this repository, if you would like to run the code without compiling it yourself. Please ensure that you
  - Have a 64-bit compatible computer.
@@ -19,10 +28,10 @@ before running the executable.
 This project was originally built using Visual C++20 in Visual Studio 2022 and uses the Visual C++17 64-bit version of SFML 2.6.1. Please ensure you have a 64-bit compatible system before attempting to compile and run this application.
 In order to compile the code locally and run it using Visual Studio, you should follow the instructions below, ensuring that software versions match where possible to avoid any unwanted errors.
 
- - [Download](https://visualstudio.microsoft.com/vs/) and Install Visual Studio 2022.
+ - Download [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) and Install it.
  - Clone or Download and Extract this repository to an appropriate directory on your local machine. You should end up with a folder called ``CellularAutomataEngine``.
    - Note: If you Download this project rather than Cloning it, you may find that after extracting the files from the ``.zip`` folder, there is a second folder called ``CellularAutomataEngine`` within the first one. It is this inner folder you want -- move the inner folder to your desired directory and delete the (now empty) outer folder.
- - [Download SFML](https://www.sfml-dev.org/download/sfml/2.6.1/). You will need the Visual C++17 (2022) 64-bit version of SFML 2.6.1.
+ - Download [SFML](https://www.sfml-dev.org/download/sfml/2.6.1/). You will need the Visual C++17 (2022) 64-bit version of SFML 2.6.1.
  - Extract the SFML files from the ``.zip`` folder you just downloaded.
  - Inside the ``SFML-2.6.1-windows-vc17-64-bit`` folder you will find a folder named ``SFML-2.6.1``. Move this ``SFML-2.6.1`` folder to the same directory as the ``CellularAutomataEngine`` folder you obtained earlier, but NOT inside the ``CellularAutomataEngine`` folder itself.
  - Rename ``SFML-2.6.1`` to ``SFML_x64.``
@@ -45,23 +54,46 @@ To reiterate the note in the introduction, once this project reaches a release b
 
 (Note that the ``.exe`` file at the root of the project folder does not update when you compile the code yourself. A new executable will be generated in ``x64 > Debug`` and you will need to copy the sfml ``.dll`` files into the same folder in order to run the executable.
 
-
 ## Functionality
 
-### Current Functionality
+The CA Engine is still a work in progress. Should you experience any problems or have any suggestions please [Contact Us](https://lewisn3142.github.io/contact_page/contact.html).
 
-### Proposed Functionality
-More information on proposed functions of The CA Engine can be found in the relevant project page (link TBC). As a brief overview, here are some functions that are currently in the works:
+Currently, the Debug version of The CA Engine (Release version TBC) includes the following functionality:
 
-## Implementing Your Own Algorithms
+ - Sparse Matrix Game of Life Algorithm
+   - Variable starting population
+   - Random initial population
+   - Variable neighbourhood types (Moore, Newman)
+     
+ - Square Tiling Generator
+   - Variable grid size
+   - Variable boundary conditions (Plane, Cylinder, Torus, Real Projective Space, Klein Bottle, Moebius Strip)
+
+More information on proposed functionality can be found on the relevant project page (link TBC). As a brief overview, here are some features that are currently in development:
+
+ - New regular tilings (Hexagons, Triangles).
+ - Irregular/Aperiodic tilings (Penrose, Einstein).
+ - Import graphs as matrices.
+ - Save import settings and export results.
+
+## Settings
+
+### Using Existing Functionality
 TBC
 
-## Implementing Your Own Tilings
+### Implementing Your Own Tilings
 TBC
 
-## License
+### Implementing Your Own Algorithms
+TBC
 
-The material contained within this repository (including but not limited to code, program files, and their documentation) is distributed under a CC-BY-NC-SA license. Should you wish to license this material under any other terms, or claim copyright to any material presented herein, please [Contact Us](https://lewisn3142.github.io/contact_page/contact.html)
+## License and Terms
+
+The material contained within this repository (including but not limited to code, program files, and their documentation) is distributed under a CC-BY-NC-SA license. The material contained within this repository is believed to be safe, true, and accurate. We accept no responsibility for losses incurred, whether directly or indirectly, resulting from incorrect use of this material. Should you wish to license this material under any other terms, claim copyright to any material presented herein, or have any issue with the material herein, please [Contact Us](https://lewisn3142.github.io/contact_page/contact.html).
+
+## Acknowledgements
+
+This project was undertaken under the kind supervision of [Dr. Jamie Gabbay](https://gabbay.org.uk/) of Heriot-Watt University. I am very thankful for him being so amenable to the idea of collaboration when I initially reached out, as well as for his help and advice thereafter.
 
 ## References
 TBC
