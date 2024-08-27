@@ -13,7 +13,6 @@ SquareTiling::SquareTiling(int numRows, int numColumns, e_Surface surfaceType, b
 	// Moore or Von Neumann neighbourhood definition
 	m_isMoore = isMoore; 
 
-	// Add in check to make sure below are greater than 1
 	m_numRowsInTiling = numRows;
 	m_numColumnsInTiling = numColumns;
 	m_numCells = m_numRowsInTiling * m_numColumnsInTiling; 
@@ -23,13 +22,13 @@ SquareTiling::SquareTiling(int numRows, int numColumns, e_Surface surfaceType, b
 
 void SquareTiling::generateAdjacencyMatrix()
 {
-	// Total number of neighbours in tiling / edges in graph / non-zero entries in adjacency matrix
+	// Total number of neighbours in tiling / edges in graph / non-zero entries in adjacency matrix (this value is for Sphere, Projective plane, Torus which have no Dirichlet BCs)
 	m_numTotalNeighbours = 4 * m_numCells * (1 + m_isMoore);
 
 	switch (m_surfaceType)
 	{
 	case PLANE:
-		m_numTotalNeighbours = m_numTotalNeighbours - m_numRowsInTiling * (2 + 4 * m_isMoore) + 4; // Adjust for Dirichlet boundaries on left and right for 1 case
+		m_numTotalNeighbours = m_numTotalNeighbours - m_numRowsInTiling * (2 + 4 * m_isMoore) + 4 * m_isMoore; // Adjust for Dirichlet boundaries on left and right for 1 case
 		[[fallthrough]]; // Also has Dirichlet top and bottom
 
 	case CYLINDER: 
@@ -37,10 +36,6 @@ void SquareTiling::generateAdjacencyMatrix()
 
 	case MOEBIUS:
 		m_numTotalNeighbours = m_numTotalNeighbours - m_numColumnsInTiling * (2 + 4 * m_isMoore); // Adjust for Dirichlet boundaries on top and bottom for 3 cases
-		break;
-
-	case SPHERE:
-		// Todo...
 		break;
 
 	default: break;
@@ -69,6 +64,8 @@ void SquareTiling::generateVisualTiling(int blockSize)
 }
 
 // Setter Methods
+
+// Note that corner tiles for the topological sphere have themselves as three of their neighbours
 void SquareTiling::setNumCellNeighbours()
 {
 	m_numCellNeighbours = std::vector<int>(m_numCells, 4 * (1 + m_isMoore)); // By default, all cells have 4 or 8 neighbours
@@ -102,10 +99,6 @@ void SquareTiling::setNumCellNeighbours()
 			m_numCellNeighbours[i] -= edgeAdjustment;
 			m_numCellNeighbours[m_numCells - (i + 1)] -= edgeAdjustment;
 		}
-		break;
-
-	case SPHERE:
-		// Todo...
 		break;
 
 	default: break;
@@ -164,9 +157,24 @@ void SquareTiling::setListCellNeighbours()
 					candidateNeighbourTilingIndex = m_numCells - candidateNeighbourTilingIndex;
 					break;
 
+				// Move neighbour from left column to top row (for our sphere top right and bottom left corners of representative square are poles)
 				case SPHERE:
-					// Todo...
+					candidateNeighbourTilingIndex = m_numColumnsInTiling - (candidateNeighbourTilingIndex / m_numColumnsInTiling);
+
+					// Make bottom right corner its own neighbour one time (one neighbour ends up off the top of the grid)
+					if (candidateNeighbourTilingIndex < 0)
+					{
+						candidateNeighbourTilingIndex += m_numCells;
+					}
+
+					// Make top right corner its own neighbour three times (one neighbour stays in the left column)
+					if (candidateNeighbourTilingIndex % m_numColumnsInTiling == 0)
+					{
+						candidateNeighbourTilingIndex = m_numColumnsInTiling - (candidateNeighbourTilingIndex / m_numColumnsInTiling);
+					}
+
 					break;
+
 				default: break;
 				}
 			}
@@ -195,8 +203,15 @@ void SquareTiling::setListCellNeighbours()
 					break;
 
 				case SPHERE:
-					// Todo...
+					candidateNeighbourTilingIndex = (m_numCells - 1 - (candidateNeighbourTilingIndex / m_numColumnsInTiling)) % m_numCells;
+
+					// Make bottom left corner its own neighbour three times (one neighbour stays in the right column)
+					if ((candidateNeighbourTilingIndex+1) % m_numColumnsInTiling == 0)
+					{
+						candidateNeighbourTilingIndex = (m_numCells - 1 - (candidateNeighbourTilingIndex / m_numColumnsInTiling)) % m_numCells;
+					}
 					break;
+
 				default: break;
 				}
 			}
@@ -224,7 +239,7 @@ void SquareTiling::setListCellNeighbours()
 					break;
 
 				case SPHERE:
-					// Todo
+					candidateNeighbourTilingIndex = -1 - candidateNeighbourTilingIndex * m_numColumnsInTiling;
 					break;
 				default: break;
 				}
@@ -253,11 +268,10 @@ void SquareTiling::setListCellNeighbours()
 					break;
 
 				case SPHERE:
-					// Todo
+					candidateNeighbourTilingIndex = m_numCells - m_numRowsInTiling * (1 + (candidateNeighbourTilingIndex % m_numCells));
 					break;
 				default: break;
 				}
-				
 			}
 
 			// If candidate neighbour is valid add its index to listCellNeighbours and update the number of neighbours that have been processed
@@ -305,9 +319,7 @@ std::vector<SquareTileCell> SquareTiling::getVisualTiling()
 
 
 
-// Change occurance of "Tiles" to "Cells"
 // Do modelling for sphere...
-
 // Add in function to change range of neighbourhood -- would need to change listCellNeighbours computer for different BCs
 
 // if do langton's ants or similar, each tile needs to know who are its neighbours 

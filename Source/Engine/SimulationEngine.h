@@ -12,14 +12,16 @@ private:
 	int m_stepCounter = 0;
 
 	std::vector<int> m_tilingStates;
-	std::pair<int,int> m_proportionDeadAlive; // Set a default value...
+	std::vector<int> m_oldTilingStates;
+
+	std::pair<int,int> m_proportionDeadAlive; 
 	bool m_isSimulationRunning = false;
 
 	void handleInput();
 
 	SquareTiling generateSquareTiling(int rows, int columns, e_Surface surfaceType, bool isMoore, int blockSize, std::pair<int,int> proportionDeadAlive);
-	void drawVisualCells(std::vector<SquareTileCell> visualTiles);
-	void renderTiling(SquareTiling tiling);
+	void drawVisualCells(std::vector<SquareTileCell> visualTiles, bool isLatent);
+	void renderTiling(SquareTiling tiling, bool isLatent);
 
 public:
 	SimulationEngine();

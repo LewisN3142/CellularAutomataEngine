@@ -48,6 +48,9 @@
     <ClCompile Include="Source\Tilings\SquareTiling.cpp">
       <Filter>Source Files\Tilings</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Tilings\TriangleTileCell.cpp">
+      <Filter>Source Files\Tilings</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Automata\MatrixAutomata.h">
@@ -59,19 +62,13 @@
     <ClInclude Include="Source\Engine\variables.h">
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Tilings\GenericTileCell.h">
-      <Filter>Header Files\Tilings</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Tilings\GenericTiling.h">
-      <Filter>Header Files\Tilings</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Tilings\RegularTiling.h">
-      <Filter>Header Files\Tilings</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Tilings\SquareTileCell.h">
       <Filter>Header Files\Tilings</Filter>
     </ClInclude>
     <ClInclude Include="Source\Tilings\SquareTiling.h">
+      <Filter>Header Files\Tilings</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Tilings\TriangleTileCell.h">
       <Filter>Header Files\Tilings</Filter>
     </ClInclude>
   </ItemGroup>

@@ -17,11 +17,13 @@ rowStart -- Vector containing the index of the entry in columnIndex correspondin
 numCellNeighbours -- Number of neighbours each cell has, equivalent to the number of non-zero entries in the rows of the adjacency matrix 
                         Precomputed and passed to function (rather than calculating internally each time) as is static once the tiling is generated 
 
+births, survives -- the number of neighbouring tiles which have to be alive for the current cell to be born/survive. See B/S notation for Game of Life.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 */
 
 
-std::vector<int> MatrixGoL(std::vector<int> tilingStates, std::vector<int> rowStart, std::vector<int> columnIndex, std::vector<int> numCellNeighbours)
+std::vector<int> MatrixGoL(std::vector<int> tilingStates, std::vector<int> rowStart, std::vector<int> columnIndex, std::vector<int> numCellNeighbours, std::vector<int> births, std::vector<int> survival)
 {
 	int length = (int)tilingStates.size();
 	std::vector<int> newStates(length, 0);
@@ -37,8 +39,21 @@ std::vector<int> MatrixGoL(std::vector<int> tilingStates, std::vector<int> rowSt
 			cellTwiceAliveNeighbours[cellInTiling] -= tilingStates[columnIndex[cellNeighboursIter]];
 		}
 
-		// If cell is currently dead and has 3 neighbours or the cell is currently alive and has (2 or 3) neighbours, then the new state is alive, otherwise the new state is dead.
-		bool isCellAlive = (tilingStates[cellInTiling] == DEAD && cellTwiceAliveNeighbours[cellInTiling] == 6) || (tilingStates[cellInTiling] == ALIVE && (cellTwiceAliveNeighbours[cellInTiling] == 4 || cellTwiceAliveNeighbours[cellInTiling] == 6));
+		// Check whether the current cell will come alive if it is dead (for standard GoL, a dead cell becomes alive if it has 3 living neighbours)
+		bool isCellBorn = 0;
+		for (int cond : births)
+		{
+			isCellBorn = (isCellBorn || (bool)(cellTwiceAliveNeighbours[cellInTiling] == 2 * cond));
+		}
+
+		// Check whether the current cell will stay alive if it is alive (for standard GoL, an alive cell stays alive if it has 2 or 3 living neighbours)
+		bool isCellSurvivor = 0;
+		for (int cond : survival)
+		{
+			isCellSurvivor = (isCellSurvivor || (bool)(cellTwiceAliveNeighbours[cellInTiling] == 2 * cond));
+		}
+
+		bool isCellAlive = (tilingStates[cellInTiling] == DEAD && isCellBorn) || (tilingStates[cellInTiling] == ALIVE && isCellSurvivor);
 
 		switch (isCellAlive) {
 		case 1:

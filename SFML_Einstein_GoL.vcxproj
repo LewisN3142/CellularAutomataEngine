@@ -148,16 +148,15 @@
     <ClCompile Include="Source\Engine\SimulationEngine.cpp" />
     <ClCompile Include="Source\Tilings\SquareTileCell.cpp" />
     <ClCompile Include="Source\Tilings\SquareTiling.cpp" />
+    <ClCompile Include="Source\Tilings\TriangleTileCell.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Automata\MatrixAutomata.h" />
     <ClInclude Include="Source\Engine\SimulationEngine.h" />
     <ClInclude Include="Source\Engine\variables.h" />
-    <ClInclude Include="Source\Tilings\GenericTileCell.h" />
-    <ClInclude Include="Source\Tilings\GenericTiling.h" />
-    <ClInclude Include="Source\Tilings\RegularTiling.h" />
     <ClInclude Include="Source\Tilings\SquareTileCell.h" />
     <ClInclude Include="Source\Tilings\SquareTiling.h" />
+    <ClInclude Include="Source\Tilings\TriangleTileCell.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
