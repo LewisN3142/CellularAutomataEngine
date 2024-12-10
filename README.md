@@ -76,6 +76,8 @@ More information on proposed functionality can be found on the relevant project 
  - Import graphs as matrices.
  - Save import settings and export results.
 
+This project is currently undergoing a major refactor to better incorporate the above features.
+
 ## Settings
 
 ### Using Existing Functionality
