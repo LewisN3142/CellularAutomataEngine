@@ -22,7 +22,7 @@ void SimulationEngine::run()
 	int rows = 50;
 	int columns = 50;
 	int blockSize = 14;
-	e_Surface surfaceType = SPHERE;
+	e_Surface surfaceType = TORUS;
 	bool isMoore = 1; // Choose between von Neumann neighbourhood (no corners) when isMoore=0, and Moore neighbourhood (with corners) when isMoore=1
 
 	std::pair<int, int> proportionDeadAlive(2, 1); 
